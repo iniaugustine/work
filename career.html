@@ -261,12 +261,14 @@ The Sentinel Corp. Badge and Guard After all, without them, who are we? In our u
                  
                  <div class="form-group">
                      <label for="number">
-                         Preferred Contact?
+                         Preferred Contact?<span style="color:red">*</span>
                      </label>
-                     <select name="contact" class="custom-select">
+                     <select name="contact" required class="custom-select">
                          <option selected>Select preferred contact</option>
                          <option value="email">Email</option>
                          <option value="phone">Phone</option>
+                     <div class="valid-feedback">Valid</div>
+                     <div class="invalid-feedback">Please pick an option.</div>
                      </select>
                  </div>
                  <button type="submit" class="btn my-5 btn-info btn-block">Submit</button>
