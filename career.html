@@ -200,7 +200,7 @@ The Sentinel Corp. Badge and Guard After all, without them, who are we? In our u
          
 <!--form-->
           <div class="mt-4">
-             <form action="#" class="was-validated">
+             <form action="#" class="needs-validation" novalidate>
                  
                  <div class="form-group">
                      <label for="name">
@@ -269,7 +269,7 @@ The Sentinel Corp. Badge and Guard After all, without them, who are we? In our u
                          <option value="phone">Phone</option>
                      </select>
                  </div>
-                 <button type="button" class="btn my-5 btn-info btn-block">Submit</button>
+                 <button type="submit" class="btn my-5 btn-info btn-block">Submit</button>
                  
               </form> 
          </div>    
@@ -290,7 +290,26 @@ The Sentinel Corp. Badge and Guard After all, without them, who are we? In our u
     
 </footer>
      
-     
+     <script>
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    
+    var forms = document.getElementsByClassName('needs-validation');
+    
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
      
      <script>
           $(".custom-file-input").on("change", function(){
